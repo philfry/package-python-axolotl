@@ -22,8 +22,8 @@ Requires: protobuf-python >= 2.6.0
 BuildRequires: python2-devel
 BuildRequires: python2-setuptools
 BuildRequires: protobuf-python >= 2.6.0
-BuildRequires: python-crypto >= 2.6.0
-BuildRequires: python-axolotl-curve25519
+BuildRequires: python2-crypto >= 2.6.0
+BuildRequires: python2-axolotl-curve25519
 
 %description -n python2-%{pname}
 This is a ratcheting forward secrecy protocol that works in synchronous and
