@@ -19,6 +19,7 @@ asynchronous messaging environments.
 %package -n python2-%{pname}
 Summary: python port of libaxolotl-android
 Requires: protobuf-python >= 2.6.0
+Requires: %{name}
 BuildRequires: python2-devel
 BuildRequires: python2-setuptools
 BuildRequires: protobuf-python >= 2.6.0
@@ -34,6 +35,7 @@ Python 2 version.
 %package -n python3-%{pname}
 Summary: python port of libaxolotl-android
 Requires: python3-protobuf >= 3.2.0
+Requires: %{name}
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
 BuildRequires: python3-protobuf >= 3.2.0
@@ -65,16 +67,17 @@ Python 3 version.
 [ '%{buildroot}' != '/' ] && rm -rf %{buildroot}
 
 
-%files -n python2-%{pname}
+%files
 %{!?_licensedir:%global license %%doc}
 %license LICENSE
+
+
+%files -n python2-%{pname}
 %{python2_sitelib}/%{pname}/
 %{python2_sitelib}/*.egg-info/
 
 
 %files -n python3-%{pname}
-%{!?_licensedir:%global license %%doc}
-%license LICENSE
 %{python3_sitelib}/%{pname}/
 %{python3_sitelib}/*.egg-info/
 
