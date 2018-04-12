@@ -1,8 +1,8 @@
 %global pname axolotl
 
 Name: python-%{pname}
-Version: 0.1.39
-Release: 2%{?dist}
+Version: 0.1.42
+Release: 1%{?dist}
 Summary: python port of libaxolotl-android
 Group: Development/Libraries
 License: GPLv3+
@@ -80,5 +80,8 @@ Python 3 version.
 
 
 %changelog
+* Thu Apr 12 2018 Philippe Kueck <projects@unixadm.org> - 0.1.42-1
+- new upstream version
+
 * Fri Mar  9 2018 Philippe Kueck <projects@unixadm.org> - 0.1.39-1
 - add python3 packages
