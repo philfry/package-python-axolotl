@@ -1,7 +1,7 @@
 %global pname axolotl
 
 Name: python-%{pname}
-Version: 0.1.42
+Version: 0.2.3
 Release: 1%{?dist}
 Summary: python port of libaxolotl-android
 Group: Development/Libraries
@@ -83,6 +83,9 @@ Python 3 version.
 
 
 %changelog
+* Tue Nov  5 2019 Philippe Kueck <projects@unixadm.org> - 0.2.3-1
+- new upstream version
+
 * Thu Apr 12 2018 Philippe Kueck <projects@unixadm.org> - 0.1.42-1
 - new upstream version
 
