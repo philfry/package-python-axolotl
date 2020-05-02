@@ -2,9 +2,8 @@
 
 Name: python-%{pname}
 Version: 0.2.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: python port of libaxolotl-android
-Group: Development/Libraries
 License: GPLv3+
 URL: https://github.com/tgalal/%{name}
 Source: https://github.com/tgalal/%{name}/archive/%{version}.tar.gz
@@ -16,6 +15,7 @@ This is a ratcheting forward secrecy protocol that works in synchronous and
 asynchronous messaging environments.
 
 
+%if 0%{?fedora} && 0%{?fedora} <= 31
 %package -n python2-%{pname}
 Summary: python port of libaxolotl-android
 Requires: protobuf-python >= 2.6.0
@@ -30,6 +30,7 @@ BuildRequires: python2-axolotl-curve25519
 This is a ratcheting forward secrecy protocol that works in synchronous and
 asynchronous messaging environments.
 Python 2 version.
+%endif
 
 
 %package -n python3-%{pname}
@@ -53,18 +54,18 @@ Python 3 version.
 
 
 %build
+%if 0%{?fedora} && 0%{?fedora} <= 31
 %py2_build
+%endif
 %py3_build
 
 
 %install
 [ '%{buildroot}' != '/' ] && rm -rf %{buildroot}
+%if 0%{?fedora} && 0%{?fedora} <= 31
 %py2_install
+%endif
 %py3_install
-
-
-%clean
-[ '%{buildroot}' != '/' ] && rm -rf %{buildroot}
 
 
 %files
@@ -72,9 +73,11 @@ Python 3 version.
 %license LICENSE
 
 
+%if 0%{?fedora} && 0%{?fedora} <= 31
 %files -n python2-%{pname}
 %{python2_sitelib}/%{pname}/
 %{python2_sitelib}/*.egg-info/
+%endif
 
 
 %files -n python3-%{pname}
@@ -83,6 +86,9 @@ Python 3 version.
 
 
 %changelog
+* Sat May  2 2020 Philippe Kueck <projects@unixadm.org> - 0.2.3-2
+- prepare for Fedora 32
+
 * Tue Nov  5 2019 Philippe Kueck <projects@unixadm.org> - 0.2.3-1
 - new upstream version
 
