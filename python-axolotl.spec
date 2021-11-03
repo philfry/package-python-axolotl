@@ -9,6 +9,9 @@ URL: https://github.com/tgalal/%{name}
 Source: https://github.com/tgalal/%{name}/archive/%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{pname}-%{version}-%{release}-buildroot
 BuildArch: noarch
+BuildRequires: python3-rpm-macros
+BuildRequires: python3-devel
+BuildRequires: python3-setuptools
 
 %description
 This is a ratcheting forward secrecy protocol that works in synchronous and
